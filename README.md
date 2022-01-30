@@ -108,9 +108,3 @@ A web app where an emergency worker can input a new message and get classificati
 ![alt text](WebApp_TrainingDataset.png)
 
 
-## Licensing, Authors, Acknowledgements<a name="licensing"></a>
-
-
-
-
-
