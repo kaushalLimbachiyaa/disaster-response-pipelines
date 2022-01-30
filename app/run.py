@@ -18,17 +18,6 @@ from sqlalchemy import create_engine
 
 app = Flask(__name__)
 
-# def tokenize(text):
-#     tokens = word_tokenize(text)
-#     lemmatizer = WordNetLemmatizer()
-
-#     clean_tokens = []
-#     for tok in tokens:
-#         clean_tok = lemmatizer.lemmatize(tok).lower().strip()
-#         clean_tokens.append(clean_tok)
-
-#     return clean_tokens
-
 def tokenize(text):
     '''
 
@@ -93,6 +82,7 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     def get_counts_names(text):
         '''
+        
         This fuction will return counts and column names for text
         
         Args:
