@@ -97,6 +97,8 @@ A web app where an emergency worker can input a new message and get classificati
 2. Run the following command in the app's directory to run the web app.
     `python run.py`
 
+3. Go to http://0.0.0.0:3001/
+
 
 ## Web App Screenhots<a name="results"></a>
 
