@@ -17,6 +17,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.multioutput import MultiOutputClassifier
 
 
 def load_data(database_filepath):
@@ -107,14 +108,17 @@ def build_model():
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer = tokenize)),
         ('tfidf', TfidfTransformer()),
-        ('clf',RandomForestClassifier())
+        ('clf',MultiOutputClassifier(estimator = RandomForestClassifier()))
     ])
     
+
     parameters = {
-    'vect__ngram_range': ((1, 1), (1, 2)),
-    'clf__min_samples_leaf': [0.5 , 1],
-        'clf__n_estimators': [5]
+        'clf__estimator__min_samples_split' : [2,4],
+        'clf__estimator__min_samples_leaf' : [1,2],
+        'clf__estimator__n_estimators': [5]
     }
+
+
     
     
     gridsearch_cv = GridSearchCV(pipeline,param_grid=parameters, cv=2, n_jobs=3, verbose=3)
