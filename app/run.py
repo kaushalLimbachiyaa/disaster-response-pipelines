@@ -79,7 +79,6 @@ model = joblib.load("../models/classifier.pkl")
 def index():
     
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
     def get_counts_names(text):
         '''
         
